@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function updateValue(val) {
+          document.getElementById("rangeValue").innerText = val;
+        }
+      </script>
+    <title>Input Tpyes</title>
+</head>
+<body>
+
+    <form action="" method="">
+        <h1>FORM</h1>
+
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="Enter Email:" required>
+        <div>&nbsp;</div> 
+
+        <label for="number">Quantity:</label>
+        <br>
+        <input type="number" id="number" name="number" min="1" max="10" step="2" placeholder="1-10" required>
+        <div>&nbsp;</div> 
+
+        <label for="date">Date:</label>
+        <br>
+        <input type="date" id="date" name="date" placeholder="yyyy-mm-dd" min="2017-10-01" max="2024-11-30" required>
+        <div>&nbsp;</div>
+
+        <label for="experience">Rate Your Experience: 1-5</label>
+        <br>
+        <span id="rangeValue">1</span>
+        <br>
+        <input type="range" id="experience" name="experience" min="1" max="5" value="1" oninput="updateValue(this.value)" required>
+        <div>&nbsp;</div>
+
+        <label for="color">Choose a color:</label>
+        <input type="color" id="color" name="color" value="#0000FF">
+
+
+        <div>&nbsp;</div>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
