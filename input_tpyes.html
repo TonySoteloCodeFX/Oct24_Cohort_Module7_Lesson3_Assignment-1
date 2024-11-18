@@ -12,36 +12,85 @@
 </head>
 <body>
 
-    <form action="" method="">
-        <h1>FORM</h1>
+    <form action="" method="" aria-labelledby="form-title">
+        <h1 id="form-title">FORM</h1>
 
+        <!-- Email Input  -->
         <label for="email">Email:</label>
         <br>
-        <input type="email" id="email" name="email" placeholder="Enter Email:" required>
-        <div>&nbsp;</div> 
-
-        <label for="number">Quantity:</label>
-        <br>
-        <input type="number" id="number" name="number" min="1" max="10" step="2" placeholder="1-10" required>
-        <div>&nbsp;</div> 
-
-        <label for="date">Date:</label>
-        <br>
-        <input type="date" id="date" name="date" placeholder="yyyy-mm-dd" min="2017-10-01" max="2024-11-30" required>
+        <input type="email" id="email" name="email" placeholder="Enter Email:" aria-required="true" aria-describedby="email-desc" required>
+        <span id="email-desc">Enter an email address.</span>
         <div>&nbsp;</div>
 
-        <label for="experience">Rate Your Experience: 1-5</label>
+        <!-- Number Input  -->
+        <label for="number">Quantity:</label>
+        <br>
+        <input type="number" id="number" name="number" min="1" max="10" step="2" placeholder="1-10" aria-required="true" aria-describedby="quantity_desc" required>
+        <span id="quantity_desc">Enter quantity from 1 to 10</span>
+        <div>&nbsp;</div>
+        
+        <!-- Date Input  -->
+        <label for="date">Date:</label>
+        <br>
+        <input type="date" id="date" name="date" placeholder="yyyy-mm-dd" min="2017-10-01" max="2024-11-30" value="date" aria-required="true" aria-describedby="date_desc" required>
+        <span id="date_desc" a date</span>
+        <div>&nbsp;</div>
+
+        <!-- Range Input  -->
+        <label for="rating">Rate Our Service: 1-5</label>
         <br>
         <span id="rangeValue">1</span>
         <br>
-        <input type="range" id="experience" name="experience" min="1" max="5" value="1" oninput="updateValue(this.value)" required>
+        <input type="range" id="rating" name="rating" min="1" max="5" value="1" oninput="updateValue(this.value)" aria-required="true" aria-describedby="rating_desc" required>
+        <span id="rating_desc">Rate our service from 1 to 5</span>
         <div>&nbsp;</div>
 
+        <!-- Color Input  -->
         <label for="color">Choose a color:</label>
-        <input type="color" id="color" name="color" value="#0000FF">
-
-
+        <input type="color" id="color" name="color" value="#0000FF" >
         <div>&nbsp;</div>
+
+        <!-- Select Input  -->
+        <label for="language">Choose your favorite program language:</label>
+        <br>
+        <select name="language" id="language" aria-required="true">
+          <option value="" disabled selected>Select a language</option>
+          <option value="python">Python</option>
+          <option value="javascript">JavaScript</option>
+          <option value="java">Java</option>
+          <option value="csharp">C#</option>
+          <option value="ruby">Ruby</option>
+          <option value="cpp">C++</option>
+        </select>
+        <div>&nbsp;</div>
+
+        <!-- Radio Input  -->
+        <div id="expertise_label">Your level of expertise:</div>
+        <br>
+        <input type="radio" id="beginner" name="expertise" value="beginner" aria-labelledby="expertise_label">
+        <label for="beginner">Beginner</label>
+
+        <input type="radio" id="intermediate" name="expertise" value="intermediate" aria-labelledby="expertise_label">
+        <label for="intermediate">Intermediate</label>
+
+        <input type="radio" id="advanced" name="expertise" value="advanced" aria-labelledby="expertise_label">
+        <label for="advanced">Advanced</label>
+        <div>&nbsp;</div>
+
+        <!-- Checkbox Input  -->
+        <div id="platform_pref">Your Preferred Development Platforms:</div>
+        <br>
+        <input type="checkbox" id="web" name="preferred_platform" value="web" aria-labelledby="platform_pref">
+        <label for="web">Web</label>
+
+        <input type="checkbox" id="mobile" name="preferred_platform" value="mobile" aria-labelledby="platform_pref">
+        <label for="mobile">Mobile</label>
+
+        <input type="checkbox" id="desktop" name="preferred_platform" value="desktop" aria-labelledby="platform_pref">
+        <label for="desktop">Desktop</label>
+        <div>&nbsp;</div>
+
+        <!-- Submit Button  -->
         <button type="submit">Submit</button>
     </form>
     
